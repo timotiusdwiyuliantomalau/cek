@@ -37,14 +37,14 @@ export default async function AppLayout({
   params,
   children,
 }: {
-  params: { locale: string }
+  params: { locale: any }
   children: React.ReactNode
 }) {
   const setting = await getSetting()
   const currencyCookie = (await cookies()).get('currency')
   const currency = currencyCookie ? currencyCookie.value : 'USD'
 
-  const { locale } = await params
+  const { locale } = params
   // Ensure that the incoming `locale` is valid
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   if (!routing.locales.includes(locale as any)) {
