@@ -37,7 +37,7 @@ export default async function AppLayout({
   params,
   children,
 }: {
-  params: { locale: any }
+  params: { locale: string }
   children: React.ReactNode
 }) {
   const setting = await getSetting()
